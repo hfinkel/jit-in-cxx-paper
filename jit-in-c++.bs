@@ -1,11 +1,11 @@
 <pre class='metadata'>
 Title: C++ Should Support Just-in-Time Compilation
 Shortname: P1609
-Revision: 0
+Revision: 1
 Audience: EWGI
 Status: P
 Group: WG21
-URL: http://wg21.link/p1609r0
+URL: http://wg21.link/p1609
 Editor: Hal Finkel, Argonne National Laboratory, hfinkel@anl.gov
 Abstract: C++ has been specifically designed to support the creation of performance-sensitive systems. C++ templates have become a critical piece of this support, allowing the creation of algorithmic specializations to which the application can dispatch based on runtime conditions. However, many applications are pushing this capability to its limit, generating so many specializations using template instantiation that compile times are interfering with programmer productivity. In other cases, programmers simply must settle for suboptimal performance because the ahead-of-time generation of specializations with better performance is not practical given the size of the relevant parameter space. To address these challenges, this paper proposes to add to C++ the capability to support programmer-directed just-in-time (JIT) compilation.
 Date: 2019-03-10
