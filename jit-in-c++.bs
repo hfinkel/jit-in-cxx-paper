@@ -141,6 +141,12 @@ where `jit_this_template` is a new keyword.
 
 The disadvantage of tying the JIT use to the point of instantiation instead of to the template itself, is that we need to decide that happens if the same instantiation is created both at compile time in the usual manner and also requested to be delayed until program execution. This might be okay or it might be some kind of ODR violation.
 
+A library-like syntax is also possible (suggestion by Connor Waters):
+
+<xmp>
+  std::jit<foo, a, _, b, c, _, _>(x, y, z)
+</xmp>
+
 A Benchmark {#bench}
 ===========
 
@@ -374,7 +380,7 @@ Thus, using the JIT gives the performance advantages of using many ahead-of-time
 Acknowledgments {#ack}
 =======
 
-I'd like to thank David Poliakoff for a lot of testing and feedback on the implementation, and I'd like to thank the many committee members who provided me with feedback on this idea during the Kona meeting.
+I'd like to thank David Poliakoff for a lot of testing and feedback on the implementation, and I'd like to thank the many committee members who provided me with feedback on this idea during the Kona meeting. I'd also like to thank Michał Dominiak, Nir Friedman, and Connor Waters for providing feedback.
 
 This research was supported by the Exascale Computing Project (17-SC-20-SC), a collaborative effort of two U.S. Department of Energy organizations (Office of Science and the National Nuclear Security Administration) responsible for the planning and preparation of a capable exascale ecosystem, including software, applications, hardware, advanced system engineering, and early testbed platforms, in support of the nation's exascale computing imperative. Additionally, this research used resources of the Argonne Leadership Computing Facility, which is a DOE Office of Science User Facility supported under Contract DE-AC02-06CH11357.
 

@@ -1230,7 +1230,7 @@ Possible extra rowspan handling
   <meta content="Bikeshed version c03af8da7325f5ae3f9ca742161b5d270bbce12f" name="generator">
   <link href="http://wg21.link/p1609" rel="canonical">
   <link href="https://isocpp.org/favicon.ico" rel="icon">
-  <meta content="9ede10266ef7a22d725dfff76e875b386e5f4c00" name="document-revision">
+  <meta content="85218ab2a521ce0d764350ec1ff36b96ad1d9ae9" name="document-revision">
 <style>/* style-md-lists */
 
 /* This is a weird hack for me not yet following the commonmark spec
@@ -1586,6 +1586,9 @@ pre .property::before, pre .property::after {
 </pre>
    <p>where <code class="highlight"><c- n>jit_this_template</c-></code> is a new keyword.</p>
    <p>The disadvantage of tying the JIT use to the point of instantiation instead of to the template itself, is that we need to decide that happens if the same instantiation is created both at compile time in the usual manner and also requested to be delayed until program execution. This might be okay or it might be some kind of ODR violation.</p>
+   <p>A library-like syntax is also possible (suggestion by Connor Waters):</p>
+<pre class="highlight"><c- n>std</c-><c- o>::</c-><c- n>jit</c-><c- o>&lt;</c-><c- n>foo</c-><c- p>,</c-> <c- n>a</c-><c- p>,</c-> <c- n>_</c-><c- p>,</c-> <c- n>b</c-><c- p>,</c-> <c- n>c</c-><c- p>,</c-> <c- n>_</c-><c- p>,</c-> <c- n>_</c-><c- o>></c-><c- p>(</c-><c- n>x</c-><c- p>,</c-> <c- n>y</c-><c- p>,</c-> <c- n>z</c-><c- p>)</c->
+</pre>
    <h2 class="heading settled" data-level="5" id="bench"><span class="secno">5. </span><span class="content">A Benchmark</span><a class="self-link" href="#bench"></a></h2>
    <p>As a benchmark to illustrate the feature, we’ll adapt a benchmark from the <a href="http://eigen.tuxfamily.org/">Eigen</a> library. Specifically, this one: https://github.com/eigenteam/eigen-git-mirror/blob/master/bench/benchmark.cpp</p>
    <p>We want to look at two aspects: Compile time and runtime performance. Eigen provides a matrix type which can either have compile-time-specific or runtime-specified sizes (i.e., the number of rows and columns).</p>
@@ -1758,7 +1761,7 @@ pre .property::before, pre .property::after {
    <p>The JIT-generated code is <strong>significantly</strong> faster than the ahead-of-time-generated code for small matrix sizes. The advantage becomes less significant as the matrix sizes become larger.</p>
    <p>Thus, using the JIT gives the performance advantages of using many ahead-of-time specializations, and is sometimes even better, with very low compile-time cost.</p>
    <h2 class="heading settled" data-level="6" id="ack"><span class="secno">6. </span><span class="content">Acknowledgments</span><a class="self-link" href="#ack"></a></h2>
-   <p>I’d like to thank David Poliakoff for a lot of testing and feedback on the implementation, and I’d like to thank the many committee members who provided me with feedback on this idea during the Kona meeting.</p>
+   <p>I’d like to thank David Poliakoff for a lot of testing and feedback on the implementation, and I’d like to thank the many committee members who provided me with feedback on this idea during the Kona meeting. I’d also like to thank Michał Dominiak, Nir Friedman, and Connor Waters for providing feedback.</p>
    <p>This research was supported by the Exascale Computing Project (17-SC-20-SC), a collaborative effort of two U.S. Department of Energy organizations (Office of Science and the National Nuclear Security Administration) responsible for the planning and preparation of a capable exascale ecosystem, including software, applications, hardware, advanced system engineering, and early testbed platforms, in support of the nation’s exascale computing imperative. Additionally, this research used resources of the Argonne Leadership Computing Facility, which is a DOE Office of Science User Facility supported under Contract DE-AC02-06CH11357.</p>
   </main>
 <script>
