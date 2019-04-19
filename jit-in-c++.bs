@@ -377,6 +377,17 @@ The JIT-generated code is **significantly** faster than the ahead-of-time-genera
 
 Thus, using the JIT gives the performance advantages of using many ahead-of-time specializations, and is sometimes even better, with very low compile-time cost. 
 
+For more information, see: [arXiv:1904.08555](https://arxiv.org/abs/1904.08555).
+
+Other C++ JIT Approaches {#others}
+=======
+
+Combining C++ with JIT compilation is not new. See:
+
+ * Facebook's C++ JIT [talk](https://llvm.org/devmtg/2019-04/talks.html#Talk_15) / [poster](https://llvm.org/devmtg/2019-04/talks.html#Poster_9)
+ * CERN's [Cling](https://root.cern.ch/cling)
+ * From the RuntimeCompiledCPlusPlus project, [A large list](https://github.com/RuntimeCompiledCPlusPlus/RuntimeCompiledCPlusPlus/wiki/Alternatives)
+
 Acknowledgments {#ack}
 =======
 

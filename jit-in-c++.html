@@ -1230,7 +1230,7 @@ Possible extra rowspan handling
   <meta content="Bikeshed version c03af8da7325f5ae3f9ca742161b5d270bbce12f" name="generator">
   <link href="http://wg21.link/p1609" rel="canonical">
   <link href="https://isocpp.org/favicon.ico" rel="icon">
-  <meta content="85218ab2a521ce0d764350ec1ff36b96ad1d9ae9" name="document-revision">
+  <meta content="d8911196722648cc6f6cfc9486ed5929a09d0f93" name="document-revision">
 <style>/* style-md-lists */
 
 /* This is a weird hack for me not yet following the commonmark spec
@@ -1484,7 +1484,8 @@ pre .property::before, pre .property::after {
       <li><a href="#ctperf"><span class="secno">5.1</span> <span class="content">Compile Time</span></a>
       <li><a href="#rtperf"><span class="secno">5.2</span> <span class="content">Runtime Performance</span></a>
      </ol>
-    <li><a href="#ack"><span class="secno">6</span> <span class="content">Acknowledgments</span></a>
+    <li><a href="#others"><span class="secno">6</span> <span class="content">Other C++ JIT Approaches</span></a>
+    <li><a href="#ack"><span class="secno">7</span> <span class="content">Acknowledgments</span></a>
    </ol>
   </nav>
   <main>
@@ -1760,7 +1761,18 @@ pre .property::before, pre .property::after {
    <p>A few trends to notice:</p>
    <p>The JIT-generated code is <strong>significantly</strong> faster than the ahead-of-time-generated code for small matrix sizes. The advantage becomes less significant as the matrix sizes become larger.</p>
    <p>Thus, using the JIT gives the performance advantages of using many ahead-of-time specializations, and is sometimes even better, with very low compile-time cost.</p>
-   <h2 class="heading settled" data-level="6" id="ack"><span class="secno">6. </span><span class="content">Acknowledgments</span><a class="self-link" href="#ack"></a></h2>
+   <p>For more information, see: <a href="https://arxiv.org/abs/1904.08555">arXiv:1904.08555</a>.</p>
+   <h2 class="heading settled" data-level="6" id="others"><span class="secno">6. </span><span class="content">Other C++ JIT Approaches</span><a class="self-link" href="#others"></a></h2>
+   <p>Combining C++ with JIT compilation is not new. See:</p>
+   <ul>
+    <li data-md>
+     <p>Facebook’s C++ JIT <a href="https://llvm.org/devmtg/2019-04/talks.html#Talk_15">talk</a> / <a href="https://llvm.org/devmtg/2019-04/talks.html#Poster_9">poster</a></p>
+    <li data-md>
+     <p>CERN’s <a href="https://root.cern.ch/cling">Cling</a></p>
+    <li data-md>
+     <p>From the RuntimeCompiledCPlusPlus project, <a href="https://github.com/RuntimeCompiledCPlusPlus/RuntimeCompiledCPlusPlus/wiki/Alternatives">A large list</a></p>
+   </ul>
+   <h2 class="heading settled" data-level="7" id="ack"><span class="secno">7. </span><span class="content">Acknowledgments</span><a class="self-link" href="#ack"></a></h2>
    <p>I’d like to thank David Poliakoff for a lot of testing and feedback on the implementation, and I’d like to thank the many committee members who provided me with feedback on this idea during the Kona meeting. I’d also like to thank Michał Dominiak, Nir Friedman, and Connor Waters for providing feedback.</p>
    <p>This research was supported by the Exascale Computing Project (17-SC-20-SC), a collaborative effort of two U.S. Department of Energy organizations (Office of Science and the National Nuclear Security Administration) responsible for the planning and preparation of a capable exascale ecosystem, including software, applications, hardware, advanced system engineering, and early testbed platforms, in support of the nation’s exascale computing imperative. Additionally, this research used resources of the Argonne Leadership Computing Facility, which is a DOE Office of Science User Facility supported under Contract DE-AC02-06CH11357.</p>
   </main>
